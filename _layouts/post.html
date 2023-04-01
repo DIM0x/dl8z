@@ -1,0 +1,184 @@
+---
+layout: page
+refactor: true
+panel_includes:
+  - toc
+tail_includes:
+  - related-posts
+  - post-nav
+  - comments
+---
+
+<h1 data-toc-skip>{{ page.title }}</h1>
+
+<div class="post-meta text-muted">
+    <!-- published date -->
+    <span>
+      {{ site.data.locales[site.lang].post.posted }}
+      {% include datetime.html date=page.date tooltip=true %}
+    </span>
+
+    <!-- lastmod date -->
+    {% if page.last_modified_at %}
+    <span>
+      {{ site.data.locales[site.lang].post.updated }}
+      {% include datetime.html date=page.last_modified_at tooltip=true %}
+    </span>
+    {% endif %}
+
+  {% if page.image %}
+    {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
+    {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
+    {% capture alt %}alt="{{ page.image.alt | default: "Preview Image" }}"{% endcapture %}
+
+    {% capture lqip %}
+      {% if page.image.lqip %}
+        lqip="{{ page.image.lqip }}"
+      {% endif %}
+    {% endcapture %}
+
+    <div class="mt-3 mb-3">
+      <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip | strip }}>
+      {%- if page.image.alt -%}
+        <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>
+      {%- endif -%}
+    </div>
+  {% endif %}
+
+  <div class="d-flex justify-content-between">
+    <!-- author(s) -->
+    <span>
+      {% if page.author %}
+        {% assign authors = page.author %}
+      {% elsif page.authors %}
+        {% assign authors = page.authors %}
+      {% endif %}
+
+      {{ site.data.locales[site.lang].post.written_by }}
+
+      <em>
+      {% if authors %}
+        {% for author in authors %}
+          <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
+          {% unless forloop.last %}</em>, <em>{% endunless %}
+        {% endfor %}
+      {% else %}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+      {% endif %}
+      </em>
+    </span>
+
+    <div>
+      <!-- page views -->
+      {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
+      <span>
+        <em id="pv" class="pageviews">
+          <i class="fas fa-spinner fa-spin fa-fw"></i>
+        </em>
+        {{ site.data.locales[site.lang].post.pageview_measure }}
+      </span>
+      {% endif %}
+
+      <!-- read time -->
+      {% include read-time.html content=content prompt=true %}
+    </div>
+
+  </div> <!-- .d-flex -->
+
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  {{ content }}
+</div>
+
+<div class="post-tail-wrapper text-muted">
+
+  <!-- categories -->
+  {% if page.categories.size > 0 %}
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw mr-1"></i>
+    {% for category in page.categories %}
+      <a href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{ category }}</a>
+      {%- unless forloop.last -%}, {%- endunless -%}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- tags -->
+  {% if page.tags.size > 0 %}
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw mr-1"></i>
+      {% for tag in page.tags %}
+      <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+          class="post-tag no-text-decoration" >
+        {{- tag -}}
+      </a>
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="post-tail-bottom
+    d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+
+      {% if site.data.locales[site.lang].copyright.license.template %}
+
+        {% capture _replacement %}
+        <a href="{{ site.data.locales[site.lang].copyright.license.link }}">
+          {{ site.data.locales[site.lang].copyright.license.name }}
+        </a>
+        {% endcapture %}
+
+        {{ site.data.locales[site.lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
+
+      {% endif %}
+    </div>
+
+    {% include post-sharing.html %}
+
+  </div><!-- .post-tail-bottom -->
+
+</div><!-- div.post-tail-wrapper -->
+
+
+<!-- Remarkbox - Your readers want to communicate with you -->
+<div id="remarkbox-div">
+  <noscript>
+    <iframe id=remarkbox-iframe src="https://my.remarkbox.com/embed?nojs=true" style="height:600px;width:100%;border:none!important" tabindex=0></iframe>
+  </noscript>
+</div>
+<script src="https://my.remarkbox.com/static/js/iframe-resizer/iframeResizer.min.js"></script>
+<script>
+  var rb_owner_key = "b22605a7-cf03-11ed-bc68-83aad5f5c937";
+  var thread_uri = window.location.href;
+  var thread_title = window.document.title;
+  var thread_fragment = window.location.hash;
+
+  // rb owner was here.
+  var rb_src = "https://my.remarkbox.com/embed" + 
+      "?rb_owner_key=" + rb_owner_key +
+      "&thread_title=" + encodeURI(thread_title) +
+      "&thread_uri=" + encodeURIComponent(thread_uri) + 
+      thread_fragment;
+
+  function create_remarkbox_iframe() {
+    var ifrm = document.createElement("iframe");
+    ifrm.setAttribute("id", "remarkbox-iframe");
+    ifrm.setAttribute("scrolling", "no");
+    ifrm.setAttribute("src", rb_src);
+    ifrm.setAttribute("frameborder", "0");
+    ifrm.setAttribute("tabindex", "0");
+    ifrm.setAttribute("title", "Remarkbox");
+    ifrm.style.width = "100%";
+    document.getElementById("remarkbox-div").appendChild(ifrm);
+  }
+  create_remarkbox_iframe();
+  iFrameResize(
+    {
+      checkOrigin: ["https://my.remarkbox.com"],
+      inPageLinks: true,
+      initCallback: function(e) {e.iFrameResizer.moveToAnchor(thread_fragment)}
+    },
+    document.getElementById("remarkbox-iframe")
+  );
+</script>
