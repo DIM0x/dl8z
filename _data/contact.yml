@@ -5,9 +5,9 @@
   icon: 'fab fa-github'
   url: 'https://github.com/dim0x/dl8z/'
 -
-  type: email
+  type: github
   icon: 'fas fa-envelope'
-  noblank: true            # open link in current tab
+  url: 'https://dim0x.github.io/dl8z/about/#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F'
 -
   type: rss
   icon: 'fas fa-rss'
