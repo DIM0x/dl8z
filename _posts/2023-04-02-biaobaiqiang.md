@@ -1,5 +1,5 @@
 ---
-title: 八中表白墙：不仅表白
+title: 八中表白墙：不只表白，不止前行
 author: dimo
 categories: [博客相关]
 tags: [介绍]
