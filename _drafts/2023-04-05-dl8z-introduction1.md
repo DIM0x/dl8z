@@ -1,8 +1,8 @@
 ---
 title: UCN-Board使用指南
 author: dimo
-categories: [八中投稿]
-tags: [介绍和教程,dimo]
+categories: [八中介绍系列]
+tags: [dimo]
 ---
 
 本文主要对八中使用的智能黑板UCN-Board作使用说明。
