@@ -8,6 +8,7 @@
 !.versionrc.json
 !.stylelintrc.json
 !.gitignore
+!.docs-builder.bat
 
 # bundler cache
 !_site
