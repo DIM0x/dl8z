@@ -7,7 +7,7 @@ cdns:
     args: crossorigin
   - url: https://fonts.googleapis.com
   # jsDelivr CDN
-  - url: https://gcore.jsdelivr.net
+  - url: https://cdn1.tianli0.top
 
 # fonts
 
@@ -16,47 +16,47 @@ webfonts: https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:w
 # Libraries
 
 jquery:
-  js: https://gcore.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js
+  js: https://cdn1.tianli0.top/npm/jquery@3.6.1/dist/jquery.min.js
 
 bootstrap:
-  css: https://gcore.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css
-  js: https://gcore.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js
+  css: https://cdn1.tianli0.top/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css
+  js: https://cdn1.tianli0.top/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js
 
 bootstrap-toc:
-  css: https://gcore.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css
-  js: https://gcore.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js
+  css: https://cdn1.tianli0.top/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css
+  js: https://cdn1.tianli0.top/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js
 
 fontawesome:
-  css: https://gcore.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css
+  css: https://cdn1.tianli0.top/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css
 
 search:
-  js: https://gcore.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js
+  js: https://cdn1.tianli0.top/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js
 
 mermaid:
-  js: https://gcore.jsdelivr.net/npm/mermaid@9.2.2/dist/mermaid.min.js
+  js: https://cdn1.tianli0.top/npm/mermaid@9.2.2/dist/mermaid.min.js
 
 dayjs:
   js:
-    common: https://gcore.jsdelivr.net/npm/dayjs@1.11.6/dayjs.min.js
-    locale: https://gcore.jsdelivr.net/npm/dayjs@1.11.6/locale/:LOCALE.min.js
-    relativeTime: https://gcore.jsdelivr.net/npm/dayjs@1.11.6/plugin/relativeTime.min.js
-    localizedFormat: https://gcore.jsdelivr.net/npm/dayjs@1.11.6/plugin/localizedFormat.min.js
+    common: https://cdn1.tianli0.top/npm/dayjs@1.11.6/dayjs.min.js
+    locale: https://cdn1.tianli0.top/npm/dayjs@1.11.6/locale/:LOCALE.min.js
+    relativeTime: https://cdn1.tianli0.top/npm/dayjs@1.11.6/plugin/relativeTime.min.js
+    localizedFormat: https://cdn1.tianli0.top/npm/dayjs@1.11.6/plugin/localizedFormat.min.js
 
 countup:
-  js: https://gcore.jsdelivr.net/npm/countup.js@1.9.3/dist/countUp.min.js
+  js: https://cdn1.tianli0.top/npm/countup.js@1.9.3/dist/countUp.min.js
 
 magnific-popup:
-  css: https://gcore.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css
-  js: https://gcore.jsdelivr.net/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js
+  css: https://cdn1.tianli0.top/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css
+  js: https://cdn1.tianli0.top/npm/magnific-popup@1.1.0/dist/jquery.magnific-popup.min.js
 
 lazysizes:
-  js: https://gcore.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js
+  js: https://cdn1.tianli0.top/npm/lazysizes@5.3.2/lazysizes.min.js
 
 clipboard:
-  js: https://gcore.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js
+  js: https://cdn1.tianli0.top/npm/clipboard@2.0.11/dist/clipboard.min.js
 
 polyfill:
   js: https://polyfill.io/v3/polyfill.min.js?features=es6
 
 mathjax:
-  js: https://gcore.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js
+  js: https://cdn1.tianli0.top/npm/mathjax@3.2.2/es5/tex-chtml.js
