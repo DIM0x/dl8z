@@ -11,8 +11,9 @@
 !.docs-builder.bat
 
 # bundler cache
-!_site
+_site
 vendor
+.jekyll-cache
 
 # rubygem
 *.gem

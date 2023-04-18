@@ -66,7 +66,7 @@ order: 4
 
 ![jsdelivr error](https://dataphoto.sibnet.ru/upload/imggreat/1674195620471477560.jpg)
 
-这是由于使用的主题chirpy默认使用到了存储在cdn.jsdelivr.net的js脚本，但是此站点经常发生连接不正常（被墙），此处我只能**将域名更改为gcore.jsdelivr.net来加速访问**，勉强能够连接但是仍不稳定。因此blog页面有时还是会出现排版错位等情况，此时请检查网络连接或自行加速。*所有文字内容仍可正常访问。*
+这是由于使用的主题chirpy默认使用到了存储在cdn.jsdelivr.net的js脚本，但是此站点经常发生连接不正常（被墙）。目前**JSD加速由Tianli提供支持**。blog页面有时还是会出现排版错位等情况，此时请检查网络连接或自行加速（参考软件：[UsbEAm Hosts Editor](https://www.dogfight360.com/blog/475/)）。*所有文字内容仍可正常访问。*
 
 ---
 
