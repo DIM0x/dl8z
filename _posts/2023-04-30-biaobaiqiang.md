@@ -6,6 +6,8 @@ tags: [八中表白墙]
 image: https://img.urlnode.com/file/15cff88969ee46d2235d5.jpg
 ---
 
+## 一
+
 八中表白墙，是一个QQ账号。请在QQ搜索2939530757或“八中表白墙”。
 
 从[非常复古的QQ空间页面](http://2939530757.qzone.qq.com)可以看到，QQ号的第一个名字是“花心大少”。
@@ -21,3 +23,28 @@ image: https://img.urlnode.com/file/15cff88969ee46d2235d5.jpg
 无论如何，现在的八中表白墙，就是我们心底所希望看到的样子。
 
 屏幕背后，不会是谎言和虚假。在你指尖下缓缓流过的，满是熟悉。
+
+*posted on 2023-04-02*
+
+## 二
+
+最近五一假期，没事刷贴吧，结果刷到了这样一条。
+
+![百度贴吧](https://img.urlnode.com/file/a7a449ec8a323f6ed9c67.png)
+
+![](https://img.urlnode.com/file/19806782ea41529b188d0.png)
+
+让我瞎猜一回：八中表白墙曾经换过QQ号？
+
+但是这个时间和上面并不像对的上的样子。
+
+![](https://img.urlnode.com/file/964d3b1c16ebe1d323578.png)
+
+让我们追溯到更远。
+
+![](https://img.urlnode.com/file/71800bbb4eb206d140a0d.png)
+
+> 不知不觉啊。2019年已经是4年之前了。
+
+*posted on 2023-04-30*
+
