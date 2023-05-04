@@ -76,3 +76,8 @@ Email: 1819275783@qq.com
 ---
 
 **由于是第一次搭建博客，经验不足，有不妥之处欢迎联系指正。**
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_page_pv">
+  本页面总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
