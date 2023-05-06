@@ -1,7 +1,7 @@
 ---
 title: 八中介绍系列：绪言
 author: dimo
-categories: [八中介绍系列]
+categories: [八中介绍]
 tags: [dimo]
 ---
 
