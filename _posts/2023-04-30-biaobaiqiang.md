@@ -2,7 +2,6 @@
 title: 八中表白墙：不只表白，不止前行
 author: dimo
 categories: [博客与作者介绍]
-tags: [八中表白墙]
 image: https://img.urlnode.com/file/15cff88969ee46d2235d5.jpg
 ---
 
