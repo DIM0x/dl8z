@@ -1,0 +1,46 @@
+name: Generate For 4EVERLAND
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --config _config_4everland.yml
+        env:
+          JEKYLL_ENV: production
+      - name: Clone and Copy
+        run: |
+            git clone git@github.com:DIM0x/dl8z-4EVERLAND.git old-4
+            cp -r $GITHUB_WORKSPACE/_site new-4/
+            cp -r old-4/.git/ new-4/.git/
+            cp -r old-4/.github/ new-4/.github/
+      - name: git push
+        run: |
+            cd new-4
+            mkdir -p /root/.ssh
+            echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+            chmod 600 /root/.ssh/id_rsa
+            git remote add origin git@github.com:DIM0x/dl8z-4EVERLAND.git
+            git add .
+            git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
+            git push origin master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GH2_RSA }}
