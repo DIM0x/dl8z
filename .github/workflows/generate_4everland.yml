@@ -28,6 +28,9 @@ jobs:
           JEKYLL_ENV: production
       - name: Clone and Copy
         run: |
+            mkdir -p /root/.ssh
+            echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
+            chmod 600 /root/.ssh/id_rsa
             git clone git@github.com:DIM0x/dl8z-4EVERLAND.git old-4
             cp -r $GITHUB_WORKSPACE/_site new-4/
             cp -r old-4/.git/ new-4/.git/
@@ -35,9 +38,6 @@ jobs:
       - name: git push
         run: |
             cd new-4
-            mkdir -p /root/.ssh
-            echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
-            chmod 600 /root/.ssh/id_rsa
             git remote add origin git@github.com:DIM0x/dl8z-4EVERLAND.git
             git add .
             git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
