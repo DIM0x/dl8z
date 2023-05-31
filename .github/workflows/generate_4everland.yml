@@ -39,7 +39,6 @@ jobs:
       - name: git push
         run: |
             cd new-4
-            git remote add origin git@github.com:DIM0x/dl8z-4EVERLAND.git
             git add .
             git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
             git push origin master
