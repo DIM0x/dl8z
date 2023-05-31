@@ -34,7 +34,6 @@ jobs:
             git clone git@github.com:DIM0x/dl8z-4EVERLAND.git old-4
             cp -r $GITHUB_WORKSPACE/_site new-4/
             cp -r old-4/.git/ new-4/.git/
-            cp -r old-4/.github/ new-4/.github/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GH2_RSA }}            
       - name: git push
