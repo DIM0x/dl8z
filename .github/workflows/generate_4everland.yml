@@ -35,6 +35,8 @@ jobs:
             cp -r $GITHUB_WORKSPACE/_site new-4/
             cp -r old-4/.git/ new-4/.git/
             cp -r old-4/.github/ new-4/.github/
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GH2_RSA }}            
       - name: git push
         run: |
             cd new-4
@@ -42,5 +44,3 @@ jobs:
             git add .
             git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
             git push origin master
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GH2_RSA }}
