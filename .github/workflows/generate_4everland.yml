@@ -28,9 +28,9 @@ jobs:
           JEKYLL_ENV: production
       - name: Clone and Copy
         run: |
-            mkdir -p /root/.ssh
-            echo "$SSH_PRIVATE_KEY" > /root/.ssh/id_rsa
-            chmod 600 /root/.ssh/id_rsa
+            mkdir -p ~/.ssh
+            echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
             git clone git@github.com:DIM0x/dl8z-4EVERLAND.git old-4
             cp -r $GITHUB_WORKSPACE/_site new-4/
             cp -r old-4/.git/ new-4/.git/
