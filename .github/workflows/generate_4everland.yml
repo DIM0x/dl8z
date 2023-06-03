@@ -69,7 +69,6 @@ jobs:
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
             ls
-            git config --system --unset credential.helper
             git config --global user.email "forker2@dim0.uu.me"
             git config --global user.name "forker2"
             git config --list
