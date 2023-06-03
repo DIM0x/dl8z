@@ -65,17 +65,19 @@ jobs:
           JEKYLL_ENV: production
       - name: Clone and Copy
         run: |
+            ls ~/
             mkdir -p ~/.ssh
+            ls ~/.ssh
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
-            git clone git@bitbucket.org:dl8z/dl8z.bitbucket.io.git old-4
-            cp -r $GITHUB_WORKSPACE/_site new-4/
-            cp -r old-4/.git/ new-4/.git/
+            git clone git@bitbucket.org:dl8z/dl8z.bitbucket.io.git old-b
+            cp -r $GITHUB_WORKSPACE/_site new-b/
+            cp -r old-b/.git/ new-b/.git/
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.GH2_RSA }}            
+          SSH_PRIVATE_KEY: ${{ secrets.BB_RSA }}            
       - name: git push
         run: |
-            cd new-4
+            cd new-b
             git config --global user.email "forker2@dim0.uu.me"
             git config --global user.name "forker2"
             git add .
