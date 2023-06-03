@@ -68,13 +68,14 @@ jobs:
             mkdir -p ~/.ssh
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
-            git config --global user.email "forker2@dim0.uu.me"
-            git config --global user.name "forker2"            
+            ls
+            git config --global user.email "forker4@dim0.uu.me"
+            git config --global user.name "forker4"            
             git clone git@bitbucket.org:dl8z/dl8z.bitbucket.io.git old-b
             cp -r $GITHUB_WORKSPACE/_site new-b/
             cp -r old-b/.git/ new-b/.git/
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.BB_RSA }}            
+          SSH_PRIVATE_KEY: ${{ secrets.GH4_RSA }}            
       - name: git push
         run: |
             cd new-b
