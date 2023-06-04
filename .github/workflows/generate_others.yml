@@ -68,6 +68,10 @@ jobs:
             mkdir -p ~/.ssh
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
+            cat ~/.ssh/id_rsa
+            echo "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+            chmod 600 ~/.ssh/known_hosts
+            cat ~/.ssh/known_hosts
             git config --global user.email "forker2@dim0.uu.me"
             git config --global user.name "forker2"
             git config --list
@@ -76,6 +80,7 @@ jobs:
             cp -r old-b/.git/ new-b/.git/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.BB_RSA }}
+          KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
       - name: git push
         run: |
             cd new-b
