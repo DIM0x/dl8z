@@ -1,4 +1,4 @@
-name: Generate For 4EVERLAND
+name: Generate For Other Services
 
 on:
   # Runs on pushes targeting the default branch
@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  build:
+  4everland:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,7 +47,7 @@ jobs:
             git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
             git push origin master
   
-  sidebuild:
+  bitbucket:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -68,12 +68,10 @@ jobs:
             mkdir -p ~/.ssh
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
-            ls
             git config --global user.email "forker2@dim0.uu.me"
             git config --global user.name "forker2"
             git config --list
-            echo yes > yestemp.txt
-            git clone git@bitbucket.org:dl8z/dl8z.bitbucket.io.git old-b < yestemp.txt
+            git clone https://dim0x@bitbucket.org/dl8z/dl8z.bitbucket.io old-b
             cp -r $GITHUB_WORKSPACE/_site new-b/
             cp -r old-b/.git/ new-b/.git/
         env:
