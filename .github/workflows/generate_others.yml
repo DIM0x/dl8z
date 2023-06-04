@@ -90,3 +90,32 @@ jobs:
             git add .
             git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
             git push origin master
+            
+  neocities:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --config _config_neocities.yml
+        env:
+          JEKYLL_ENV: production
+      - name: Get API Key
+        run: |
+            gem install neocities
+            curl "https://dl8z:$PSWD@neocities.org/api/key" > apikey.txt
+            cat apikey.txt | grep "api_key" | sed "s/:/\n/g" | sed '1d' | sed 's/"//g' | sed 's/ //g' > ~/.config/neocities/config
+        env:
+          PSWD: ${{ secrets.NEO_PSWD }}
+      - name: Push
+        run: |
+            cd _site
+            cp 404.html not_found.html
+            neocities push .

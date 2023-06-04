@@ -59,15 +59,15 @@ Email: 1819275783@qq.com
 
 ### 其他
 
-最近（也可能是一直这样），博客有时加载缓慢。浏览器显示加载完成后，文字均可以正常显示，但页面排版时而出错。特此解释说明一下。
+如果网页页面加载缓慢，请按下F12按键查看控制台。
 
-通过浏览器调试工具可以看到，控制台爆出许多js脚本加载失败错误。所有向cdn.jsdelivr.net发送的请求都没有收到response。
+如果你看到类似下图，提示script加载失败，请与我联系以便更换cdn：
 
 ![js load error](https://dataphoto.sibnet.ru/upload/imggreat/1674195540811477560.jpg)
 
 ![jsdelivr error](https://dataphoto.sibnet.ru/upload/imggreat/1674195620471477560.jpg)
 
-这是由于使用的主题chirpy默认使用到了存储在cdn.jsdelivr.net的js脚本，但是此站点经常发生连接不正常（被墙）。目前**JSD加速由Tianli提供支持**。blog页面有时还是会出现排版错位等情况，此时请检查网络连接或自行加速（参考软件：[UsbEAm Hosts Editor](https://www.dogfight360.com/blog/475/)）。*所有文字内容仍可正常访问。*
+这是由于使用的主题chirpy默认使用到了存储在cdn.jsdelivr.net的js脚本，但是此站点经常发生连接不正常（被墙）。目前**JSD加速由Tianli提供支持**，这是一个位于国内的cdn，正常来说访问会较快。如果还是出现上图状况，证明cdn已经停止运营，请与我联系更换cdn。*所有文字内容仍可正常访问。*
 
 ---
 
