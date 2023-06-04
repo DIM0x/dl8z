@@ -10,7 +10,7 @@ on:
 
 
 jobs:
-  4everland:
+  four_everland:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
