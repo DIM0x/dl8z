@@ -110,6 +110,8 @@ jobs:
       - name: Get API Key
         run: |
             gem install neocities
+            mkdir -p ~/.config
+            mkdir -p ~/.config/neocities
             curl "https://dl8z:$PSWD@neocities.org/api/key" > apikey.txt
             cat apikey.txt | grep "api_key" | sed "s/:/\n/g" | sed '1d' | sed 's/"//g' | sed 's/ //g' > ~/.config/neocities/config
         env:
