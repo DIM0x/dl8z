@@ -68,9 +68,9 @@ jobs:
             mkdir -p ~/.ssh
             echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa
-            cat ~/.ssh/id_rsa
             echo "$KNOWN_HOSTS" > ~/.ssh/known_hosts
             chmod 600 ~/.ssh/known_hosts
+            echo CHECK KNOWN_HOSTS:
             cat ~/.ssh/known_hosts
             git config --global user.email "forker2@dim0.uu.me"
             git config --global user.name "forker2"
@@ -84,6 +84,7 @@ jobs:
       - name: git push
         run: |
             cd new-b
+            git remote -v
             git add .
             git diff-index --quiet HEAD || git commit -m "Automatic publish from dl8z"
-            git push origin master
+            git push
