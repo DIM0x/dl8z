@@ -15,6 +15,7 @@ tabs:
   tags: 标签
   archives: 归档(时间线)
   about: 关于/说明/更多信息
+  chat: 聊天
 
 # the text displayed in the search bar & search results
 search:
