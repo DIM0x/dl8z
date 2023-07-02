@@ -1,7 +1,7 @@
 //这里的"名人名言"看完了就没意思了！
 
 //指定条目数
-tips = new Array(30);
+tips = new Array(32);
 //条目内容
 tips[0] = '生活是不公平的，你要去适应它。';
 tips[1] = '时刻记得自己在干些什么，就不叫浪费时间。';
@@ -34,6 +34,8 @@ tips[27] = '一场梦，醒了就作罢吧。';
 tips[28] = '对待生活要冷一点。';
 tips[29] = '事情无论对错，总该是有意义的。';
 tips[30] = '可能是事实，但不一定是真相。';
+tips[31] = 'You will feel that everything is on its way to somewhere.';
+tips[32] = '只要你没空去想死亡有多可怕，那你就不会怕死。';
 
 index = Math.floor(Math.random() * tips.length);
 document.write(tips[index]); 
