@@ -16,3 +16,7 @@ dimo:
 大连八中方舟文学社:
   name: 大连八中方舟文学社
   url: ../fangzhou/
+  
+八中广电:
+  name: 八中广电（八中技术部）
+  url: ../dbtech/
