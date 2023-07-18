@@ -1,5 +1,5 @@
 ---
-title: 高一视角看八中食堂
+title: 原高一视角看八中食堂
 categories: [八中介绍]
 author: dimo
 tags: [dimo]
