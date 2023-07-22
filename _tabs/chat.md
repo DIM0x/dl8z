@@ -21,3 +21,9 @@ order: 5
 <span id="busuanzi_container_page_pv">
   本页面总阅读量<span id="busuanzi_value_page_pv"></span>次
 </span>
+
+---
+
+测试：ChatGPT镜像站
+
+<iframe src="https://13.gptchinese.org/chat/new/" frameborder="0" scrolling="yes" height="800px" style="width:100%"></iframe>
