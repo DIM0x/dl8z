@@ -34,7 +34,7 @@ tips[29] = '事情无论对错，总该是有意义的。';
 tips[30] = '可能是事实，但不一定是真相。';
 tips[31] = 'You will feel that everything is on its way to somewhere.';
 tips[32] = '只要你没空去想死亡有多可怕，那你就不会怕死。';
-tips[33] ; "死亡最大的魅力，不是让活人向往，而是让死人不愿意复生";
+tips[33] = "死亡最大的魅力，不是让活人向往，而是让死人不愿意复生";
 
 index = Math.floor(Math.random() * tips.length);
 document.write(tips[index]); 
