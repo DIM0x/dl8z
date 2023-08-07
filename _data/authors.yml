@@ -21,5 +21,10 @@ dimo:
   name: 八中广电（八中技术部）
   url: ../dbtech/
   
-转载:
-  name: （转载）
+yn:
+  name: 九栀
+  url: ../../tags/YuNing/
+  
+unknown:
+  name: ???
+  url: ../../tags/转载/
