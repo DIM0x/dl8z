@@ -1,5 +1,5 @@
 //指定条目数
-tips = new Array(33);
+tips = new Array(35);
 //条目内容
 tips[0] = '生活是不公平的，你要去适应它。';
 tips[1] = '时刻记得自己在干些什么，就不叫浪费时间。';
@@ -34,7 +34,9 @@ tips[29] = '事情无论对错，总该是有意义的。';
 tips[30] = '可能是事实，但不一定是真相。';
 tips[31] = 'You will feel that everything is on its way to somewhere.';
 tips[32] = '只要你没空去想死亡有多可怕，那你就不会怕死。';
-tips[33] = "死亡最大的魅力，不是让活人向往，而是让死人不愿意复生";
+tips[33] = "死亡最大的魅力，不是让活人向往，而是让死人不愿意复生。";
+tips[34] = '失去的东西，往往让人感觉更加珍贵。';
+tips[35] = '失去过东西，我们才懂得珍惜。';
 
 index = Math.floor(Math.random() * tips.length);
 document.write(tips[index]); 
