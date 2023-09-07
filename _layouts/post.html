@@ -142,6 +142,47 @@ tail_includes:
 
 </div><!-- div.post-tail-wrapper -->
 
+
+
 <!-- 51la --><script>
 !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"3FK05IkgZ5AYaPnD",ck:"3FK05IkgZ5AYaPnD"});
 </script>
+
+
+
+<!-- Vssue 的样式文件 -->
+<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+
+<div id="vssue"></div>
+
+  <!-- 先引入 Vue -->
+
+  <!-- Vue 运行时版 (runtime only)  -->
+  <script src="https://unpkg.com/vue@2.7.14/dist/vue.runtime.min.js"></script>
+
+  <!-- 在 Vue 之后引入 Vssue -->
+  <!-- 或： Vssue Gitee 版  -->
+  <script src="https://unpkg.com/vssue/dist/vssue.gitee.min.js"></script>
+  <!-- 将 Vssue 作为 Vue 组件使用 -->
+
+  <!-- 对于 Vue 运行时版，使用渲染函数（render function） -->
+  <script>
+    new Vue({
+      el: '#vssue',
+
+      render: h => h('Vssue', {
+        props: {
+          // 在这里设置当前页面对应的 Issue 标题
+          title: '{{ page.title }}',
+
+          // 在这里设置你使用的平台的 OAuth App 配置
+          options: {
+            owner: 'nsdimo',
+            repo: 'dl8z_vssue',
+            clientId: 'ed9fc98ff73920d6dd6acac9546faabd34a509af596e7b28f00c1ccf7f05199d',
+            clientSecret: '2b08621daf8a438d8aed550b834a183944e45f2ae3593c762f72cec4664d888b', // 只有在使用某些平台时需要
+          },
+        }
+      })
+    })
+  </script>
