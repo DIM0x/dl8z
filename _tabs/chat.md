@@ -26,4 +26,4 @@ order: 5
 
 测试：ChatGPT镜像站
 
-<iframe src="https://13.gptchinese.org/chat/new/" frameborder="0" scrolling="yes" height="800px" style="width:100%"></iframe>
+<iframe src="https://50.gptchinese.app/chat/new" frameborder="0" scrolling="yes" height="800px" style="width:100%"></iframe>

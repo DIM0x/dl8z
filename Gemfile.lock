@@ -14,6 +14,7 @@ GEM
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
     forwardable-extended (2.6.0)
+    google-protobuf (3.23.2)
     google-protobuf (3.23.2-x64-mingw-ucrt)
     google-protobuf (3.23.2-x86_64-linux)
     html-proofer (3.19.4)
@@ -72,6 +73,12 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mini_portile2 (2.8.6)
+    nokogiri (1.15.2)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    nokogiri (1.15.2-arm-linux)
+      racc (~> 1.4)
     nokogiri (1.15.2-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.15.2-x86_64-linux)
@@ -88,6 +95,10 @@ GEM
     rexml (3.2.5)
     rouge (4.1.2)
     safe_yaml (1.0.5)
+    sass-embedded (1.62.1-aarch64-linux-android)
+      google-protobuf (~> 3.21)
+    sass-embedded (1.62.1-arm-linux-gnueabihf)
+      google-protobuf (~> 3.21)
     sass-embedded (1.62.1-x64-mingw-ucrt)
       google-protobuf (~> 3.21)
     sass-embedded (1.62.1-x86_64-linux-gnu)
@@ -106,6 +117,8 @@ GEM
     yell (2.2.2)
 
 PLATFORMS
+  aarch64-linux-android
+  arm-linux
   x64-mingw-ucrt
   x86_64-linux
 
@@ -118,4 +131,4 @@ DEPENDENCIES
   wdm (~> 0.1.1)
 
 BUNDLED WITH
-   2.4.13
+   2.4.10
