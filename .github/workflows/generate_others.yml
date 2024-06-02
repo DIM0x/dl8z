@@ -141,7 +141,8 @@ jobs:
       - name: Upload to serv00
         run: |
           sudo apt install -y ncftp
-          ncftpput -R -u $UNAME -p $PSWD s3.serv00.com public_html ./_site
+          echo "rm -rf public_html/*" | ncftp -u $UNAME -p $PSWD s3.serv00.com
+          ncftpput -R -u $UNAME -p $PSWD s3.serv00.com public_html .
         env:
           UNAME: ${{ secrets.SERV00_USR }}
           PSWD: ${{ secrets.SERV00_PSWD }}
