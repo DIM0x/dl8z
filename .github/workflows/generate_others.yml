@@ -127,6 +127,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: true
       - name: Setup Ruby
         uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
         with:
@@ -140,8 +142,13 @@ jobs:
           JEKYLL_ENV: production
       - name: Upload to serv00
         run: |
-          sudo apt install -y ncftp
-          ncftpput -R -u $UNAME -p $PSWD s3.serv00.com public_html ./_site
+          sudo apt install -y ncftp lftp
+          echo "----------"
+          lftp -e 'rm -r -f public_html; bye' -u $UNAME,$PSWD -p 21 s3.serv00.com
+          echo "----------"
+          ncftpput -R -u $UNAME -p $PSWD s3.serv00.com / ./_site
+          echo "----------"
+          lftp -e 'mv _site public_html; bye' -u $UNAME,$PSWD -p 21 s3.serv00.com
         env:
           UNAME: ${{ secrets.SERV00_USR }}
           PSWD: ${{ secrets.SERV00_PSWD }}
