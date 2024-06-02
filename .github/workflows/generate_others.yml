@@ -122,3 +122,27 @@ jobs:
             cd _site
             cp 404.html not_found.html
             neocities push .
+  serv00:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Build with Jekyll
+      # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --config _config_serv00.yml
+        env:
+          JEKYLL_ENV: production
+      - name: Upload to serv00
+        run: |
+          sudo apt install -y ncftp
+          ncftpput -R -u $UNAME -p $PSWD s3.serv00.com public_html ./_site
+        env:
+          UNAME: ${{ secrets.SERV00_USR }}
+          PSWD: ${{ secrets.SERV00_PSWD }}
+
