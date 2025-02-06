@@ -6,6 +6,8 @@
 
 https://dl8z.4everland.website/
 
+https://dl8z.4everland.app/
+
 ②通过neocities访问
 
 https://dl8z.neocities.org/
