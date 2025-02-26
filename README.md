@@ -24,7 +24,7 @@ https://dim0x.github.io/dl8z/
 
 https://dl8z.dimo.serv00.net/
 
-⑥通过vercel访问
+⑥通过vercel访问（注：自定义域名的搜索功能可能有问题）
 
 https://dlems.dynv6.net/
 

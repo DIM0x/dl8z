@@ -1,0 +1,139 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<article class="px-1">
+  {% if page.layout == 'page' or page.collection == 'tabs' %}
+    {% assign tab_key = page.title | downcase %}
+    {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+    <h1 class="dynamic-title">
+      {{ title }}
+    </h1>
+    <div class="content">
+      {{ content }}
+    </div>
+  {% else %}
+    {{ content }}
+  {% endif %}
+
+    <button onclick="checkAllStatus()">立即检查</button>
+    <div class="status-container" id="statusContainer">
+        <!-- 状态条目会动态插入到这里 -->
+    </div>
+
+    <script>
+const injectStyles = () => {
+    const styleTag = document.createElement('style');
+    styleTag.textContent = `
+        .status-container {
+            margin: 20px 0;
+        }
+
+        .site-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 0 1.75rem 0;
+            border-style:outset;
+            border-radius: 5px;
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .online {
+            background-color: #4CAF50;
+        }
+
+        .offline {
+            background-color: #f44336;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+    `;
+    document.head.appendChild(styleTag);
+};
+
+        const websites = [
+            { url: 'https://dl8z.4everland.website/' },
+            { url: 'https://dl8z.4everland.app/' },
+            { url: 'https://dl8z.neocities.org/' },
+            { url: 'https://dl8z.netlify.app/' },
+            { url: 'https://dim0x.github.io/dl8z/' },
+            { url: 'https://dl8z.dimo.serv00.net/' },
+            { url: 'https://dlems.dynv6.net/' },
+            { url: 'https://www.dlems.dynv6.net/' },
+            { url: 'https://dl8z.us.kg/' },
+            { url: 'https://dl8z.vercel.app/' },
+            { url: 'https://dl8z.bitbucket.io/' },
+        ];
+
+        function initialize() {
+            const container = document.getElementById('statusContainer');
+            websites.forEach(site => {
+                const div = document.createElement('div');
+                div.className = 'site-item';
+                div.innerHTML = `
+                    <div class="status-indicator"></div>
+                    <div>
+                        <h3>${site.url}</h3>
+                        <p class="status-text">检测中（若长时间无结果则超时）</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        async function checkStatus(site, index) {
+            const items = document.getElementsByClassName('site-item');
+            const indicator = items[index].querySelector('.status-indicator');
+            const statusText = items[index].querySelector('.status-text');
+            
+            try {
+                const response = await fetch(site.url, {
+                    method: 'HEAD',
+                    mode: 'no-cors',
+                    cache: 'no-cache'
+                });
+                indicator.className = 'status-indicator online';
+                statusText.textContent = `正常 (${new Date().toLocaleTimeString()})`;
+            } catch (error) {
+                indicator.className = 'status-indicator offline';
+                statusText.textContent = `出错 (${error.message})`;
+            }
+        }
+
+        function checkAllStatus() {
+            websites.forEach((site, index) => {
+                checkStatus(site, index);
+            });
+        }
+
+        window.onload = () => {
+            injectStyles(); 
+            initialize();
+            checkAllStatus();
+            setInterval(checkAllStatus, 300000);
+        };
+
+    </script>
+</article>
+
