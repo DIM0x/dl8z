@@ -38,4 +38,8 @@ https://dl8z.vercel.app/
 
 https://dl8z.bitbucket.io/
 
+⑧由infinityfree托管，可能随时失效
+
+https://dl8z.ct.ws/
+
 部分托管服务处于被封禁状态，请选用能打开的网址进入博客。

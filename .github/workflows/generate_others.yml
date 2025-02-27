@@ -188,3 +188,35 @@ jobs:
           UNAME: ${{ secrets.SERV00_USR }}
           PSWD: ${{ secrets.SERV00_PSWD }}
 
+  infinityfree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+          # If using the 'assets' git submodule from Chirpy Starter, uncomment above
+          # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
+          bundler-cache: true
+      - name: Build with Jekyll
+      # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --config _config_if.yml
+        env:
+          JEKYLL_ENV: "production"
+      - name: Upload to if
+        run: |
+          sudo apt install -y ncftp lftp
+          echo "----------"
+          lftp -e 'rm -r -f htdocs; bye' -u $UNAME,$PSWD -p 21 ftpupload.net
+          echo "----------"
+          mv _site htdocs
+          echo "----------"
+          ncftpput -R -u $UNAME -p $PSWD ftpupload.net / ./htdocs
+        env:
+          UNAME: ${{ secrets.IF_USR }}
+          PSWD: ${{ secrets.IF_PSWD }}
